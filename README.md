@@ -1,2 +1,1 @@
-# haskell-learn
-Answers to interesting Haskell questions
+# Answers to Interesting Haskell Questions
