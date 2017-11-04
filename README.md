@@ -1,1 +1,1 @@
-# My Answers to Interesting Haskell Questions
+# Answers to Interesting Haskell Questions
