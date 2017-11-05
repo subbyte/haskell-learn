@@ -54,22 +54,23 @@ func x = funcC . funcB . funcA $ Just x
 ``` Haskell
 func x = mc
   where
-    mc = case mb of
-        Nothing -> Nothing
-        Just b -> toMaybeC b
-    mb = case ma of
-        Nothing -> Nothing
-        Just a -> toMaybeB a
     ma = case x of
         Nothing -> Nothing
         Just z  -> toMaybeA z
+    mb = case ma of
+        Nothing -> Nothing
+        Just a -> toMaybeB a
+    mc = case mb of
+        Nothing -> Nothing
+        Just b -> toMaybeC b
 ```
 - If we know `Maybe` is a monad, we can `do`:
 ``` Haskell
 func x = do
   a <- toMaybeA x
   b <- toMaybeB a
-  toMaybeC b
+  c <- toMaybeC b
+  return c
 ```
 - Another monad version using the bind operator:
 ``` Haskell
