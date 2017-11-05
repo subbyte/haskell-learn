@@ -64,18 +64,18 @@ func x = mc
         Nothing -> Nothing
         Just z  -> toMaybeA z
 ```
-- A monad version with `do` notation:
+- If we know `Maybe` is a monad, we can `do`:
 ``` Haskell
 func x = do
   a <- toMaybeA x
   b <- toMaybeB a
   toMaybeC b
 ```
-- A monad version using the bind operator:
+- Another monad version using the bind operator:
 ``` Haskell
 func x = return x >>= toMaybeA >>= toMaybeB >>= toMaybeC
 ```
-- A monad version with Kleisli composition:
+- Another monad version with Kleisli composition:
 ``` Haskell
 func = toMaybeA >=> toMaybeB >=> toMaybeC
 ```
