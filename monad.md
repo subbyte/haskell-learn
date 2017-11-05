@@ -74,7 +74,7 @@ func x = do
 ```
 - Another monad version using the bind operator:
 ``` Haskell
-func x = return x >>= toMaybeA >>= toMaybeB >>= toMaybeC
+func x = toMaybeA x >>= toMaybeB >>= toMaybeC
 ```
 - Another monad version with Kleisli composition:
 ``` Haskell
