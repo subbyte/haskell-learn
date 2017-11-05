@@ -22,6 +22,11 @@ Class examples:
   - member type instances: `[]` (list), `Maybe`, and `State`
   
 ### What is the killer app of monad?
+- Short circuiting (`Maybe` monad, demonstrated in the next question)
+- Keeping states with immutable variables in Haskell (`State` monad)
+- Avoiding ugly syntax when implementing exception handling (`Except` monad)
+
+### How does monad reduce verboseness?
 It turns _a chain of verbose functions_ into _a chain of succinct monad functions_.
 - An example: to implement `func` with three given functions:
 ``` Haskell
