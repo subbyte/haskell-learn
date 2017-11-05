@@ -1,6 +1,6 @@
 ### 1. What is monad in Haskell?
 Monad is a _typeclass_:
-- Design goal: reduce code verboseness by requiring standard implementation for common code
+- Design goal: reduce code verboseness by requiring implicit standard implementation of common code
 - Core rules for its members: function `return` and `bind`
 
 ### 2. What is class in Haskell?
