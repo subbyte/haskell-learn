@@ -28,13 +28,11 @@ Class examples:
 
 ### 4. How does monad reduce verboseness?
 It turns _a chain of verbose functions_ into _a chain of succinct monad functions_.
-- An example: to implement `func` with three given functions:
+- An example: to implement `func :: a -> Maybe c` with three given functions:
 ``` Haskell
 toMaybeA :: a -> Maybe a
 toMaybeB :: a -> Maybe b
 toMaybeC :: b -> Maybe c
-
-func :: a -> Maybe c
 ```
 - An implementation without monad:
 ``` Haskell
