@@ -60,7 +60,7 @@ func x = mc
         Nothing -> Nothing
         Just b -> computationZ b
 ```
-- If we know `Maybe` is a monad, we can `do`:
+- If we know `Maybe` is a monad (it actually is), we can `do`:
 ``` Haskell
 func x = do
   a <- computationX x
