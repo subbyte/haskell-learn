@@ -32,23 +32,23 @@ It turns _a chain of verbose functions_ into _a chain of succinct monad function
 ``` Haskell
 -- Maybe is widely used in Haskell to replace null,
 -- so it is safer to return (Maybe a) instead of a for any computation/function
-toMaybeA :: a -> Maybe a
-toMaybeB :: a -> Maybe b
-toMaybeC :: b -> Maybe c
+computationX :: a -> Maybe a
+computationY :: a -> Maybe b
+computationZ :: b -> Maybe c
 ```
 - An implementation without monad:
 ``` Haskell
 funcA :: Maybe a -> Maybe a
 funcA Nothing = Nothing
-funcA (Just x) = toMaybeA x
+funcA (Just x) = computationX x
 
 funcB :: Maybe a -> Maybe b
 funcB Nothing = Nothing
-funcB (Just x) = toMaybeB x
+funcB (Just x) = computationY x
 
 funcC :: Maybe b -> Maybe c
 funcC Nothing = Nothing
-funcC (Just x) = toMaybeC x
+funcC (Just x) = computationZ x
 
 func x = funcC . funcB . funcA $ Just x
 ```
@@ -58,27 +58,27 @@ func x = mc
   where
     ma = case x of
         Nothing -> Nothing
-        Just z  -> toMaybeA z
+        Just z  -> computationX z
     mb = case ma of
         Nothing -> Nothing
-        Just a -> toMaybeB a
+        Just a -> computationY a
     mc = case mb of
         Nothing -> Nothing
-        Just b -> toMaybeC b
+        Just b -> computationZ b
 ```
 - If we know `Maybe` is a monad, we can `do`:
 ``` Haskell
 func x = do
-  a <- toMaybeA x
-  b <- toMaybeB a
-  c <- toMaybeC b
+  a <- computationX x
+  b <- computationY a
+  c <- computationZ b
   return c
 ```
 - Another monad version using the bind operator:
 ``` Haskell
-func x = toMaybeA x >>= toMaybeB >>= toMaybeC
+func x = computationX x >>= computationY >>= computationZ
 ```
 - Another monad version with Kleisli composition:
 ``` Haskell
-func = toMaybeA >=> toMaybeB >=> toMaybeC
+func = computationX >=> computationY >=> computationZ
 ```
