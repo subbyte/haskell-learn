@@ -76,7 +76,6 @@ func = toMaybeA >=> toMaybeB >=> toMaybeC
 ```
 - A monad version with `do` notation:
 ``` Haskell
-func :: a -> Maybe c
 func x = do
   a <- toMaybeA x
   b <- toMaybeB a
