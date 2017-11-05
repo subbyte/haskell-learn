@@ -5,7 +5,10 @@ Monad is a _typeclass_:
 
 ### What is class in Haskell?
 A class or a _typeclass_ is a category of types those share a same set of rules/functions.
-It is similar to an interface in Java or a virtual functions in C++.
+
+Similar idea in other languages:
+- Java: interface
+- C++: abstract class
 
 Class examples:
 - `Eq`
