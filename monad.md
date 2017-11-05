@@ -38,10 +38,6 @@ computationZ :: b -> Maybe c
 ```
 - An implementation without monad:
 ``` Haskell
-funcA :: Maybe a -> Maybe a
-funcA Nothing = Nothing
-funcA (Just x) = computationX x
-
 funcB :: Maybe a -> Maybe b
 funcB Nothing = Nothing
 funcB (Just x) = computationY x
@@ -50,15 +46,13 @@ funcC :: Maybe b -> Maybe c
 funcC Nothing = Nothing
 funcC (Just x) = computationZ x
 
-func x = funcC . funcB . funcA $ Just x
+func = funcC . funcB . computationX
 ```
 - A single function implementation without monad:
 ``` Haskell
 func x = mc
   where
-    ma = case x of
-        Nothing -> Nothing
-        Just z  -> computationX z
+    ma computationX x
     mb = case ma of
         Nothing -> Nothing
         Just a -> computationY a
@@ -71,8 +65,7 @@ func x = mc
 func x = do
   a <- computationX x
   b <- computationY a
-  c <- computationZ b
-  return c
+  computationZ b
 ```
 - Another monad version using the bind operator:
 ``` Haskell
