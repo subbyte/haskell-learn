@@ -4,7 +4,7 @@ Monad is a _typeclass_:
 - Core rules for its members: function `return` and `bind`
 
 ### 2. What is class in Haskell?
-A class or a _typeclass_ is a category of types those share a same set of rules/functions.
+A `class` or a _typeclass_ is a category of types those share a same set of rules/functions.
 
 Similar thoughts in other languages:
 - Java: interface
