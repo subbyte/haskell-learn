@@ -1,9 +1,9 @@
-### What is moand in Haskell?
+### 1. What is moand in Haskell?
 Monad is a _typeclass_:
 - Design goal: reduce code verboseness by providing standard implementation for common code
 - Core rules for its members: function `return` and `bind`
 
-### What is class in Haskell?
+### 2. What is class in Haskell?
 A class or a _typeclass_ is a category of types those share a same set of rules/functions.
 
 Similar thoughts in other languages:
@@ -21,12 +21,12 @@ Class examples:
   - member rules (any type in `Monad` needs to implement): `return`, `>>=` (bind), `>>`, and `fail`
   - member type instances: `[]` (list), `Maybe`, and `State`
   
-### What is the killer app of monad?
+### 3. What is the killer app of monad?
 - Short circuiting (`Maybe` monad, demonstrated in the next question)
 - Keeping states with immutable variables in Haskell (`State` monad)
 - Avoiding ugly syntax when implementing exception handling (`Except` monad)
 
-### How does monad reduce verboseness?
+### 4. How does monad reduce verboseness?
 It turns _a chain of verbose functions_ into _a chain of succinct monad functions_.
 - An example: to implement `func` with three given functions:
 ``` Haskell
