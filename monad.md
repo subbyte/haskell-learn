@@ -61,15 +61,15 @@ func x = mc
         Nothing -> Nothing
         Just z  -> toMaybeA z
 ```
-- The simple monad version:
+- A simple monad version:
 ``` Haskell
 func x = return x >>= toMaybeA >>= toMaybeB >>= toMaybeC
 ```
-- The monad version with Kleisli composition:
+- A monad version with Kleisli composition:
 ``` Haskell
 func = toMaybeA >=> toMaybeB >=> toMaybeC
 ```
-- The monad version with `do` notation:
+- A monad version with `do` notation:
 ``` Haskell
 func :: a -> Maybe c
 func x = do
