@@ -30,6 +30,8 @@ Class examples:
 It turns _a chain of verbose functions_ into _a chain of succinct monad functions_.
 - An example: to implement `func :: a -> Maybe c` with three given functions:
 ``` Haskell
+-- Maybe is widely used in Haskell to replace null,
+-- so it is safer to return (Maybe a) instead of a for any computation/function
 toMaybeA :: a -> Maybe a
 toMaybeB :: a -> Maybe b
 toMaybeC :: b -> Maybe c
