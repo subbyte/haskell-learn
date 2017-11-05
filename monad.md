@@ -75,3 +75,7 @@ func x = computationX x >>= computationY >>= computationZ
 ``` Haskell
 func = computationX >=> computationY >=> computationZ
 ```
+
+### 4. Where to find more about monad?
+- https://www.youtube.com/watch?v=ZhuHCtR3xq8&index=2&list=FLjosXY3GhJ1cIHAnqZM-QBQ
+- http://learnyouahaskell.com/a-fistful-of-monads#the-monad-type-class
