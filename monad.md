@@ -28,8 +28,9 @@ Class examples:
 - Avoiding ugly syntax when implementing exception handling (`Except` monad)
 
 ### 4. How does monad reduce verboseness?
-It turns _a chain of verbose functions_ into _a chain of succinct monad functions_.
-- An example: to implement `func :: a -> Maybe c` with three given functions:
+It turns _a chain of verbose functions_ into _a chain of succinct monad functions_. Here's an example of chaining functions. The first two implementations are done without monad, the last three are using the convenience provided by the monad syntax.
+
+**Goal**: chain the three functions below and implement `func :: a -> Maybe c`:
 ``` Haskell
 -- Maybe is widely used in Haskell to replace null,
 -- so it is safer to return (Maybe a) instead of a for any computation/function
@@ -37,7 +38,8 @@ computationX :: a -> Maybe a
 computationY :: a -> Maybe b
 computationZ :: b -> Maybe c
 ```
-- An implementation without monad:
+
+1. An implementation without monad (the modular way):
 ``` Haskell
 funcB :: Maybe a -> Maybe b
 funcB Nothing = Nothing
@@ -49,11 +51,12 @@ funcC (Just x) = computationZ x
 
 func = funcC . funcB . computationX
 ```
-- A single function implementation without monad:
+
+2. Another implementation without monad (the monolithic way):
 ``` Haskell
 func x = mc
   where
-    ma computationX x
+    ma = computationX x
     mb = case ma of
         Nothing -> Nothing
         Just a -> computationY a
@@ -61,18 +64,21 @@ func x = mc
         Nothing -> Nothing
         Just b -> computationZ b
 ```
-- If we know `Maybe` is a monad (it actually is), we can `do`:
+
+3. An implementation with monad (`Maybe` is a monad):
 ``` Haskell
 func x = do
   a <- computationX x
   b <- computationY a
   computationZ b
 ```
-- Another monad version using the bind operator:
+
+4. Another monad version using the bind operator:
 ``` Haskell
 func x = computationX x >>= computationY >>= computationZ
 ```
-- Another monad version with Kleisli composition:
+
+5. Another monad version with Kleisli composition:
 ``` Haskell
 func = computationX >=> computationY >=> computationZ
 ```
