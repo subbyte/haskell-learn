@@ -28,7 +28,7 @@ Class examples:
 - Avoiding ugly syntax when implementing exception handling (`Except` monad)
 
 ### 4. How does monad reduce verboseness?
-It turns _a chain of verbose functions_ into _a chain of succinct monad functions_. Here's an example of chaining functions. The first two implementations are done without monad, the last three are using the convenience provided by the monad syntax.
+It turns _a chain of verbose functions_ into _a chain of succinct monad functions_. Here's an example of chaining functions. The first two implementations are done without monad, the last three exploit the convenience provided by the monad syntax.
 
 **Goal**: chain the three functions below and implement `func :: a -> Maybe c`:
 ``` Haskell
