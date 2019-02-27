@@ -29,6 +29,8 @@ https://github.com/tensorflow/haskell
 - CentOS 7.6
 - stack 1.9 (use `stack upgrade` to upgrade if <1.9)
 
+To automatically setup the environment, check [CentOS Environment Setup Script](https://github.com/subbyte/tensorflow-haskell/blob/master/tools/install_centos_dependencies.sh). Manual setup steps are as follows:
+
 #### Install Protocol Buffers
 
 The rpm version on CentOS 7.6 is too old (2.5.0-8.el7 released in 2015). All
