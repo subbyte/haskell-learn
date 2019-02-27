@@ -49,7 +49,9 @@ sudo make install
 ### Install Snappy
 
 `snappy` is usually installed. To ensure the installation:
-`sudo yum install snappy -y`
+```
+sudo yum install snappy -y
+```
 
 ### Install TensorFlow C Library
 
@@ -64,7 +66,7 @@ sudo ldconfig
 
 ## Develop Your Haskell Project with TensorFlow
 
-1. Create the Haskell project
+1. Create your Haskell project
 ```
 stack new my-project
 cd my-project
@@ -92,7 +94,7 @@ extra-deps:
 stack setup
 stack build
 ```
-4. Run the project
+4. Run your project
 ```
 stack exec my-project-exe
 ```
