@@ -2,12 +2,12 @@
 
 Update of this guide: 02/26/2019
 
-## Library Information
+### Library Information
 
-### The Haskell Interface to Tensorflow C Library
+#### The Haskell Interface to Tensorflow C Library
 https://github.com/tensorflow/haskell
 
-### Supported Running Environments
+#### Supported Running Environments
 - Stack (covered by this guide)
     - latest TensorFlow Haskell git version
     - TensorFlow C library 1.9.0
@@ -25,11 +25,11 @@ https://github.com/tensorflow/haskell
     - stack resolver: lts-11.9
     - GHC 8.2.2
 
-## Setup Compiling Environment on Native CentOS with Stack
+### Setup Compiling Environment on Native CentOS with Stack
 - CentOS 7.6
-- stack 1.9
+- stack 1.9 (use `stack upgrade` to upgrade if <1.9)
 
-### Install Protocol Buffers
+#### Install Protocol Buffers
 
 The rpm version on CentOS 7.6 is too old (2.5.0-8.el7 released in 2015). All
 Fedora rpms cannot be installed on CentOS due to broken dependencies. To
@@ -46,14 +46,14 @@ make
 sudo make install
 ```
 
-### Install Snappy
+#### Install Snappy
 
 `snappy` is usually installed. To ensure the installation:
 ```
 sudo yum install snappy -y
 ```
 
-### Install TensorFlow C Library
+#### Install TensorFlow C Library
 
 ```
 mkdir -p /tmp/libtensorflow
@@ -64,7 +64,7 @@ sudo mv include/* /usr/include/
 sudo ldconfig
 ```
 
-## Develop Your Haskell Project with TensorFlow
+### Develop Your Haskell Project with TensorFlow
 
 1. Create your Haskell project
 ```
