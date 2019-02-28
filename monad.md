@@ -28,7 +28,9 @@ Class examples:
 - Avoiding verbose syntax when implementing exception handling (`Except` monad)
 
 ### 4. What does it look like to save code using monad?
-Check the following example and compare the first 2 non-monad implementations with the last 3 monad implementations.
+Check the following example and compare
+- the first 2 implementations with no knowledge about monad
+- the last 3 implementations exploiting the fact that `Maybe` is a monad
 
 **Example**: chain the 3 functions below and implement `func :: a -> Maybe d`:
 ``` Haskell
