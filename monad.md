@@ -27,7 +27,7 @@ Class examples:
 - Keeping states with immutable variables in Haskell (`State` monad)
 - Avoiding verbose syntax when implementing exception handling (`Except` monad)
 
-### 4. What does it look like to save code through monad?
+### 4. What does it look like to save code using monad?
 Check the following example and compare the first 2 non-monad implementations with the last 3 monad implementations.
 
 **Example**: chain the 3 functions below and implement `func :: a -> Maybe d`:
@@ -41,7 +41,7 @@ computationY :: b -> Maybe c
 computationZ :: c -> Maybe d
 ```
 
-1. An implementation without monad (the modular way):
+1. An implementation without knowing `Maybe` is a monad (the modular way):
 ``` Haskell
 funcB :: Maybe b -> Maybe c
 funcB Nothing = Nothing
@@ -54,7 +54,7 @@ funcC (Just x) = computationZ x
 func = funcC . funcB . computationX
 ```
 
-2. Another implementation without monad (the monolithic way):
+2. Another implementation without knowing `Maybe` is a monad (the monolithic way):
 ``` Haskell
 func x = w
   where
@@ -67,7 +67,7 @@ func x = w
         Just z -> computationZ z
 ```
 
-3. An implementation with monad (`Maybe` is a monad):
+3. An implementation knowing `Maybe` is a monad:
 ``` Haskell
 func x = do
   y <- computationX x
