@@ -27,9 +27,13 @@ https://github.com/tensorflow/haskell
 
 ### Setup Compiling Environment on Native CentOS with Stack
 - CentOS 7.6
-- stack 1.9 (use `stack upgrade` to upgrade if <1.9)
 
 To automatically setup the environment, check [CentOS Environment Setup Script](https://github.com/subbyte/tensorflow-haskell/blob/master/tools/install_centos_dependencies.sh). Manual setup steps are as follows:
+
+#### Install Stack
+```
+curl -sSL https://get.haskellstack.org/ | sh
+```
 
 #### Install Protocol Buffers
 
