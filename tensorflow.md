@@ -1,6 +1,6 @@
 # Haskell Tensorflow Library Setup Guide
 
-Update of this guide: 02/26/2019
+Last update: 02/26/2019
 
 ### Library Information
 
@@ -58,15 +58,14 @@ sudo yum install snappy -y
 #### Install TensorFlow C Library
 
 ```
-mkdir -p /tmp/libtensorflow
-cd /tmp/libtensorflow
 wget https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-linux-x86_64-1.9.0.tar.gz
-sudo mv lib/* /usr/lib64/
-sudo mv include/* /usr/include/
+tar zxf libtensorflow-cpu-linux-x86_64-1.9.0.tar.gz
+sudo cp -r lib/* /usr/lib64/
+sudo cp -r include/* /usr/include/
 sudo ldconfig
 ```
 
-### Develop Your Haskell Project with TensorFlow
+### Develop Your Haskell Project with Stack Using TensorFlow
 
 1. Create your Haskell project
 ```
