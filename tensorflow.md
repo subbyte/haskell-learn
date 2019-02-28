@@ -26,9 +26,8 @@ https://github.com/tensorflow/haskell
     - GHC 8.2.2
 
 ### Setup Compiling Environment on Native CentOS with Stack
-- CentOS 7.6
 
-To automatically setup the environment, check [CentOS Environment Setup Script](https://github.com/subbyte/tensorflow-haskell/blob/master/tools/install_centos_dependencies.sh). Manual setup steps are as follows:
+To automatically setup the environment, check [CentOS 7.6 Environment Setup Script](https://github.com/subbyte/haskell-learn/blob/master/scripts/install_tensorflow_deps_centos.sh). Manual steps are as follows:
 
 #### Install Stack
 ```
