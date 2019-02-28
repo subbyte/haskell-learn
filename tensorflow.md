@@ -1,10 +1,10 @@
-# Haskell Tensorflow Library Setup Guide
+# Haskell TensorFlow Library Setup Guide
 
 Last update: 02/26/2019
 
 ### Library Information
 
-#### The Haskell Interface to Tensorflow C Library
+#### The Haskell Interface to TensorFlow C Library
 https://github.com/tensorflow/haskell
 
 #### Supported Running Environments
