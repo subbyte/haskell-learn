@@ -86,12 +86,13 @@ func = computationX >=> computationY >=> computationZ
 ```
 
 #### What is the difference
-The `Nothing` situation is automatically handled and is transparent to the developer, which leads to much cleaner syntax.
-- `Maybe` defined only as `Nothing | Just a` does not do the magic
+The `Nothing` situation is automatically handled and is transparent to the developer, which leads to much cleaner code.
+- `Maybe a` defined only as `Nothing | Just a` does not do the magic
 - putting `Maybe` into the monad typeclass does the magic
   - Haskell gives rules to `Maybe` on how to handle `Nothing` when chained togeter
   - the set of rules satisflies the monad typeclass, i.e., `Maybe` a monad
-  - the set of rules is already implemented in core Haskell
+  - the set of rules is already specified in core Haskell
+  - it is straightforward to generate code from the rules
   - when using `>>=` and `>=>`, Haskell automatically generates code to handle the `Nothing` situation
 
 ### 5. Where to find more about monad?
