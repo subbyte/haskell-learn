@@ -2,7 +2,7 @@
 Monad is a _typeclass_, i.e., one class of types.
 
 ### 2. What is class in Haskell?
-A _class_ or a _typeclass_ is a class of types those share a same set of rules specified for this class.
+A _class_ or a _typeclass_ is a class of types that share the same set of rules specified for this class.
 
 Similar thoughts in other languages:
 - Java: interface
@@ -19,7 +19,7 @@ Class examples in Haskell (besides monad):
   - member rules (any type in `Monad` needs to implement): `return`, `>>=` (bind), `>>`, and `fail`
   - member type instances: `[]` (list), `Maybe`, and `State`
   
-### 3. Why does class provide us?
+### 3. What does class provide us?
 Do not repeat yourself.
 
 Abstractions in programming languages such as macros and modules in C/Java/Python are invented to avoid repeating yourself. Class is another abstraction to avoid repeating yourself. This abstraction is more powerful than a macro in C:
@@ -29,7 +29,9 @@ Abstractions in programming languages such as macros and modules in C/Java/Pytho
 ### 3. What does the monad class provide us?
 Do not repeat yourself when composing functions around specific types.
 
-If a type is in the monad class (satisfying rules of monad), then the developer can compose funcitons of this type without programming details of how to compose them. The details are handled by automatically generated code, which is deducted from the rules of the monad class.
+If a type is in the monad class (satisfying rules of monad), then the developer can compose functions of this type without programming details of how to compose them. The details are handled by automatically generated code, which is deducted from the rules of the monad class.
+
+This becomes extremely important in cases where the detailed code is a mess, e.g., the _callback hell_ many developers experience in Javascript. The `cont` monad in Haskell completely cleans the code in this case and makes it possible to develop large applications with lots of `cont` monad composed.
 
 Additionally, in some cases, the developer cannot specify the details of a function composition. Monad will mask out those details from the developer's view and enable programming without specifying such details. For example, one can view the Haskell IO as a special state monad where the state is the entire universe. IO operations are functions around the state monad, and they can be composed in spite of knowing how to issue a system call and change the universe outside the running program. The monad keeps the programming view in a pure functional style.
 
@@ -38,8 +40,8 @@ Additionally, in some cases, the developer cannot specify the details of a funct
 - Enhanced short circuit (`Either` and `Except` monad)
 - Realize states with variable immutability (`State` monad)
 - Operate on streamed items (`List` monad)
-- Perform IO in a pure function language (`IO` monad)
-- Turn the _callback hell_ into composible functions (`Cont` monad)
+- Perform IO in a pure functional language (`IO` monad)
+- Turn the _callback hell_ into composable functions (`Cont` monad)
 
 ### 5. What does it look like to save code using `Maybe` monad?
 Check the following example and compare
@@ -104,9 +106,9 @@ func = computationX >=> computationY >=> computationZ
 **What is the difference?**
 The `Nothing` situation is automatically handled and is transparent to the developer, which leads to much cleaner code.
 - `Maybe a` defined only as `Nothing | Just a` does not do the magic
-- putting `Maybe` into the monad typeclass does the magic
-  - Haskell gives rules to `Maybe` on how to handle `Nothing` when chained togeter
-  - the set of rules satisflies the monad typeclass, i.e., `Maybe` a monad
+- putting `Maybe` into the monad class does the magic
+  - Haskell gives rules to `Maybe` on how to handle `Nothing` when chained together
+  - the set of rules satisflies the monad class, i.e., `Maybe` a monad
   - the set of rules is already specified in core Haskell
   - it is straightforward to generate code from the rules
   - when using `>>=` and `>=>`, Haskell automatically generates code to handle the `Nothing` situation
