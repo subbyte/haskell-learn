@@ -29,7 +29,7 @@ Abstractions in programming languages such as macros and modules in C/Java/Pytho
 ### 3. What does the monad class provide us?
 Do not repeat yourself when composing functions around specific types.
 
-If a type is in this class (satisfying rules of monad), then the developer can compose funcitons of this type without programming details of how to compose them. The details are handled by automatically generated code, which is deducted from the rules of the monad class.
+If a type is in the monad class (satisfying rules of monad), then the developer can compose funcitons of this type without programming details of how to compose them. The details are handled by automatically generated code, which is deducted from the rules of the monad class.
 
 Additionally, in some cases, the developer cannot specify the details of a function composition. Monad will mask out those details from the developer's view and enable programming without specifying such details. For example, one can view the Haskell IO as a special state monad where the state is the entire universe. IO operations are functions around the state monad, and they can be composed in spite of knowing how to issue a system call and change the universe outside the running program.
 
