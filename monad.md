@@ -22,9 +22,9 @@ Class examples in Haskell (besides monad):
 ### 3. Why does class provide us?
 Do not repeat yourself.
 
-Abstractions in programming languages such as macro and modules in C/Java/Python are invented to avoid repeating yourself. Class is another abstraction to avoid repeating yourself. This abstraction is more powerful than a macro in C:
-- a macro is only doing straightforward code replacement.
-- a class deducts and generates code from the rules.
+Abstractions in programming languages such as macros and modules in C/Java/Python are invented to avoid repeating yourself. Class is another abstraction to avoid repeating yourself. This abstraction is more powerful than a macro in C:
+- A macro is only doing straightforward code replacement.
+- A class deducts and generates code from the rules.
 
 ### 3. What does the monad class provide us?
 Do not repeat yourself when composing functions around specific types.
