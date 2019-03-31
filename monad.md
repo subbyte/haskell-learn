@@ -19,14 +19,14 @@ Class examples in Haskell (besides monad):
   - member rules (any type in `Monad` needs to implement): `return`, `>>=` (bind), `>>`, and `fail`
   - member type instances: `[]` (list), `Maybe`, and `State`
   
-### 3. What does class provide us?
+### 3. What does class buy us?
 Do not repeat yourself.
 
 Abstractions in programming languages such as macros and modules in C/Java/Python are invented to avoid repeating yourself. Class is another abstraction to avoid repeating yourself. This abstraction is more powerful than a macro in C:
 - A macro is only doing straightforward code replacement.
 - A class deducts and generates code from the rules.
 
-### 3. What does the monad class provide us?
+### 3. What does the monad class buy us?
 Do not repeat yourself when composing functions around specific types.
 
 If a type is in the monad class (satisfying rules of monad), then the developer can compose functions of this type without programming details of how to compose them. The details are handled by automatically generated code, which is deducted from the rules of the monad class.
