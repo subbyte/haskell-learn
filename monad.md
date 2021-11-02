@@ -8,7 +8,7 @@ Similar thoughts in other languages:
 - Java: interface
 - C++: abstract class
 
-Class examples in Haskell (besides monad):
+Class examples in Haskell:
 - `Eq`
   - member rules (any type in `Eq` needs to implement): `==` and `/=`
   - member type instances: `Int`, `String`, and `Char`
