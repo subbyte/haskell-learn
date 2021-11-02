@@ -111,7 +111,7 @@ The `Nothing` situation is automatically handled and is transparent to the devel
   - the set of rules satisflies the monad class, i.e., `Maybe` a monad
   - the set of rules is already specified in core Haskell
   - it is straightforward to generate code from the rules
-  - when using `>>=` and `>=>`, Haskell automatically generates code to handle the `Nothing` situation
+  - when using `>>=` and `>=>`, the compiler automatically generates code to handle the `Nothing` situation
 
 ### 6. Where to find more about monad?
 - https://www.youtube.com/watch?v=ZhuHCtR3xq8&index=2&list=FLjosXY3GhJ1cIHAnqZM-QBQ
